@@ -8,12 +8,25 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.HashMap;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class WeatherForecastTestSuite {
     @Test
-    public void testCalculateForecastWithStub(){
+    public void testCalculateForecastWithMock() {
         //Given
-        Temperatures temperatures = new TemperaturesStub();
-        WeatherForecast weatherForecast = new WeatherForecast(temperatures);
+        Temperatures temperaturesMock = mock(Temperatures.class);
+        HashMap<Integer, Double> temperaturesMap = new HashMap<Integer, Double>();
+        temperaturesMap.put(0,25.5);
+        temperaturesMap.put(1,27.3);
+        temperaturesMap.put(2,26.7);
+        temperaturesMap.put(3,23.5);
+        temperaturesMap.put(4,24.6);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
         int quantityOfSensors = weatherForecast.calculateForecast().size();
