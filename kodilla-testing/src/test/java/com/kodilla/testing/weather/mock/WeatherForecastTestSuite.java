@@ -1,12 +1,10 @@
 package com.kodilla.testing.weather.mock;
 
 import com.kodilla.testing.weather.stub.Temperatures;
-import com.kodilla.testing.weather.stub.TemperaturesStub;
 import com.kodilla.testing.weather.stub.WeatherForecast;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+
 
 import java.util.HashMap;
 

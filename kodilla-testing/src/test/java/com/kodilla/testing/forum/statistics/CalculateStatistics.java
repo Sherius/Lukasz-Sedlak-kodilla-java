@@ -1,14 +1,12 @@
-package com.kodilla.testing.statistics;
+package com.kodilla.testing.forum.statistics;
 
-import com.sun.org.glassfish.external.statistics.Statistic;
+import com.kodilla.testing.forum.statistics.CalculateAdvStatistics;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.configuration.IMockitoConfiguration;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class CalculateStatistics {
     private static int testCounter = 0;
@@ -30,7 +28,7 @@ public class CalculateStatistics {
     @Test
     public void testPostCountZero() {
         //given
-        CalculateAdvStatistic calculateAdvStatistic = mock(CalculateAdvStatistic.class);
+        CalculateAdvStatistics calculateAdvStatistic = mock(CalculateAdvStatistics.class);
 
 
         //when
