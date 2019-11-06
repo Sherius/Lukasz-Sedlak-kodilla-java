@@ -27,53 +27,53 @@ public class CalculateAdvStatisticsTestSuite {
     }
 
     @Test
-    public void IfPostCountZero() {
+    public void testPostCountZero() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.postsCount()).thenReturn(0);
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int result = 0;
-        int testValue = 0;
+        double result = 0;
+        double testValue = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
         //Then
-        Assert.assertEquals(testValue, result);
+        Assert.assertEquals(testValue, result, 0.001);
 
     }
     @Test
-    public void IfPostCountThousand() {
+    public void testPostCountThousand() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.postsCount()).thenReturn(1000);
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int testValue=0;
-        int result=0;
+        double testValue=0;
+        double result=0;
         testValue = calculateAdvStatistics.averagePostPerUser;
-        if(calculateAdvStatistics.userPosts!=0);
-            result = calculateAdvStatistics.userCount/calculateAdvStatistics.userPosts;
+        if(calculateAdvStatistics.getUserPosts()!=0)
+            result = calculateAdvStatistics.getUserCount()/calculateAdvStatistics.getUserPosts();
         //Then
-        Assert.assertEquals(testValue, result);
+        Assert.assertEquals(testValue, result, 0.001);
     }
     @Test
-    public void  IfCommentsCountZero() {
+    public void  testCommentsCountZero() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.commentsCount()).thenReturn(0);
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int testValue = 0;
-        int result = 0;
+        double testValue = 0;
+        double result = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
         //Then
-        Assert.assertEquals(testValue, 0);
+        Assert.assertEquals(testValue, 0, 0.001);
 
     }
     @Test
-    public void IfCommentsIsLessThenPosts() {
+    public void testCommentsIsLessThenPosts() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.postsCount()).thenReturn(100);
@@ -81,16 +81,16 @@ public class CalculateAdvStatisticsTestSuite {
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int testValue = 0;
-        int result = 0;
+        double testValue = 0;
+        double result = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
-        if (calculateAdvStatistics.userPosts!=0)
-            result = calculateAdvStatistics.userComments/calculateAdvStatistics.userPosts;
+        if (calculateAdvStatistics.getUserPosts()!=0)
+            result = calculateAdvStatistics.getUserComments()/calculateAdvStatistics.getUserPosts();
         //Then
-        Assert.assertEquals(testValue, result);
+        Assert.assertEquals(testValue, result, 0.001);
     }
     @Test
-    public void IfCommentsIsMoreThenPosts() {
+    public void testCommentsIsMoreThenPosts() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.postsCount()).thenReturn(50);
@@ -98,26 +98,26 @@ public class CalculateAdvStatisticsTestSuite {
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int testValue = 0;
-        int result = 0;
+        double testValue = 0;
+        double result = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
-        result = calculateAdvStatistics.userComments/calculateAdvStatistics.userPosts;
+        result = calculateAdvStatistics.getUserComments()/calculateAdvStatistics.getUserPosts();
         //Then
-        Assert.assertEquals(testValue, result);
+        Assert.assertEquals(testValue, result, 0.001);
     }
     @Test
-    public void IfUsersIsZero() {
+    public void testUsersIsZero() {
         //Given
         Statistics statistics = mock(Statistics.class);
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int testValue = calculateAdvStatistics.averageCommentsPerUser;
+        double testValue = calculateAdvStatistics.averageCommentsPerUser;
         //Then
-        Assert.assertEquals(testValue, 0);
+        Assert.assertEquals(testValue, 0, 0.001);
     }
     @Test
-    public void IfUserIsHoundred() {
+    public void testUserIsHoundred() {
         //Given
         List<String> userList = new ArrayList<>();
         while (userList.size()!=100) {
@@ -128,9 +128,9 @@ public class CalculateAdvStatisticsTestSuite {
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        int testValue = calculateAdvStatistics.averagePostPerUser;
+        double testValue = calculateAdvStatistics.averagePostPerUser;
         //Then
-        Assert.assertEquals(testValue, 0);
+        Assert.assertEquals(testValue, 0, 0.001);
     }
 
 

@@ -4,26 +4,26 @@ package com.kodilla.testing.forum.statistics;
 
 
 class CalculateAdvStatistics {
-    Statistics statistics;
-    int userCount = 0;
-    int userPosts = 0;
-    int userComments = 0;
-    int averagePostPerUser = 0;
-    int averageCommentsPerUser = 0;
-    int averageCommentsPerPosts = 0;
+    private Statistics statistics;
+    private int userCount = 0;
+    private int userPosts = 0;
+    private int userComments = 0;
+    double averagePostPerUser = 0;
+    double averageCommentsPerUser = 0;
+    double averageCommentsPerPosts = 0;
 
     public CalculateAdvStatistics(Statistics statistics){
         this.statistics = statistics;
         if(statistics.usersNames().size()!=0) {
-            this.averagePostPerUser = avgPostForUser(statistics);
-            this.averageCommentsPerUser = averageCommentsPerUser(statistics);
+            this.averagePostPerUser = avgPostForUser();
+            this.averageCommentsPerUser = averageCommentsPerUser();
         }
         if(statistics.postsCount()!=0)
-            this.averageCommentsPerPosts = averageCommentsPerPosts(statistics);
+            this.averageCommentsPerPosts = averageCommentsPerPosts();
 
-        this.userCount = userCount(statistics);
-        this.userPosts = userPosts(statistics);
-        this.userComments = userComments(statistics);
+        this.userCount = userCount();
+        this.userPosts = userPosts();
+        this.userComments = (int) userComments();
     }
 
     public void showStatistics(){
@@ -35,26 +35,26 @@ class CalculateAdvStatistics {
 
 
 
-    public int averageCommentsPerPosts(Statistics statistics) {
+    public double averageCommentsPerPosts( ) {
         return statistics.commentsCount()/statistics.postsCount();
     }
 
-    public int averageCommentsPerUser(Statistics statistics) {
+    public double averageCommentsPerUser( ) {
         return statistics.commentsCount() / statistics.usersNames().size();
     }
-    public int avgPostForUser(Statistics statistics){
+    public double avgPostForUser( ){
         return statistics.postsCount() / statistics.usersNames().size();
     }
-    public int userComments(Statistics statistics) {
+    private double userComments( ) {
         return statistics.commentsCount();
     }
 
-    public int userPosts(Statistics statistics) {
+    private int userPosts( ) {
         return statistics.postsCount();
     }
 
-    public int userCount(Statistics statistic) {
-        return statistic.usersNames().size();
+    private int userCount( ) {
+        return statistics.usersNames().size();
     }
 
     public int getUserCount() {
@@ -81,11 +81,11 @@ class CalculateAdvStatistics {
         this.userComments = userComments;
     }
 
-    public int getAveragePostPerUser() {
+    public double getAveragePostPerUser() {
         return averagePostPerUser;
     }
 
-    public int getAverageCommentsPerUser() {
+    public double getAverageCommentsPerUser() {
         return averageCommentsPerUser;
     }
 

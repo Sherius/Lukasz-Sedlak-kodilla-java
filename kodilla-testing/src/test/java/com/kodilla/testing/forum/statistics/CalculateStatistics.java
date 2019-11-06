@@ -28,8 +28,6 @@ public class CalculateStatistics {
     @Test
     public void testPostCountZero() {
         //given
-        CalculateAdvStatistics calculateAdvStatistic = mock(CalculateAdvStatistics.class);
-
 
         //when
 
