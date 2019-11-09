@@ -14,13 +14,13 @@ class CalculateAdvStatistics {
 
     public CalculateAdvStatistics(Statistics statistics){
         this.statistics = statistics;
-        if(statistics.usersNames().size()!=0) {
-            this.averagePostPerUser = avgPostForUser();
+        if (statistics.usersNames().size()!=0) {
+            this.averagePostPerUser = averagePostPerUser();
             this.averageCommentsPerUser = averageCommentsPerUser();
         }
-        if(statistics.postsCount()!=0)
+        if (statistics.postsCount()!=0) {
             this.averageCommentsPerPosts = averageCommentsPerPosts();
-
+        }
         this.userCount = userCount();
         this.userPosts = userPosts();
         this.userComments = (int) userComments();
@@ -42,8 +42,9 @@ class CalculateAdvStatistics {
     public double averageCommentsPerUser( ) {
         return statistics.commentsCount() / statistics.usersNames().size();
     }
-    public double avgPostForUser( ){
+    public double averagePostPerUser( ){
         return statistics.postsCount() / statistics.usersNames().size();
+
     }
     private double userComments( ) {
         return statistics.commentsCount();
@@ -61,25 +62,19 @@ class CalculateAdvStatistics {
         return userCount;
     }
 
-    public void setUserCount(int userCount) {
-        this.userCount = userCount;
-    }
+
 
     public int getUserPosts() {
         return userPosts;
     }
 
-    public void setUserPosts(int userPosts) {
-        this.userPosts = userPosts;
-    }
+
 
     public int getUserComments() {
         return userComments;
     }
 
-    public void setUserComments(int userComments) {
-        this.userComments = userComments;
-    }
+
 
     public double getAveragePostPerUser() {
         return averagePostPerUser;

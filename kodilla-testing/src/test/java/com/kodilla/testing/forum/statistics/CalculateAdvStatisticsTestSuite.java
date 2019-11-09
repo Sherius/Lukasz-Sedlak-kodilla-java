@@ -39,6 +39,8 @@ public class CalculateAdvStatisticsTestSuite {
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
         //Then
         Assert.assertEquals(testValue, result, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
+        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, result, 0.01);
 
     }
     @Test
@@ -52,10 +54,11 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue=0;
         double result=0;
         testValue = calculateAdvStatistics.averagePostPerUser;
-        if(calculateAdvStatistics.getUserPosts()!=0)
-            result = calculateAdvStatistics.getUserCount()/calculateAdvStatistics.getUserPosts();
+            result = calculateAdvStatistics.getAveragePostPerUser();
         //Then
         Assert.assertEquals(testValue, result, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerPosts, result, 0.01);
     }
     @Test
     public void  testCommentsCountZero() {
@@ -68,8 +71,11 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue = 0;
         double result = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
+
         //Then
-        Assert.assertEquals(testValue, 0, 0.001);
+        Assert.assertEquals(testValue, result, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, result, 0.01);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
 
     }
     @Test
@@ -84,9 +90,11 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue = 0;
         double result = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
-        result = calculateAdvStatistics.getUserComments()/calculateAdvStatistics.getUserPosts();
+        result = calculateAdvStatistics.getAverageCommentsPerPosts();
         //Then
         Assert.assertEquals(testValue, result, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, result, 0.01);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
 
     }
     @Test
@@ -99,11 +107,13 @@ public class CalculateAdvStatisticsTestSuite {
         calculateAdvStatistics.showStatistics();
         //When
         double testValue = 0;
-        double result = 0;
+        double result = 2;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
-        result = calculateAdvStatistics.getUserComments()/calculateAdvStatistics.getUserPosts();
         //Then
         Assert.assertEquals(testValue, result, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, 0, 0.01);
+        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, 0, 0.01);
+
     }
     @Test
     public void testUsersIsZero() {
@@ -115,6 +125,8 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue = calculateAdvStatistics.averageCommentsPerUser;
         //Then
         Assert.assertEquals(testValue, 0, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, 0,0.01);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerPosts, 0, 0);
     }
     @Test
     public void testUserIsHoundred() {
@@ -131,6 +143,8 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue = calculateAdvStatistics.averagePostPerUser;
         //Then
         Assert.assertEquals(testValue, 0, 0.001);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerPosts, 0, 0.01);
+        Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, 0, 0.01);
     }
 
 
