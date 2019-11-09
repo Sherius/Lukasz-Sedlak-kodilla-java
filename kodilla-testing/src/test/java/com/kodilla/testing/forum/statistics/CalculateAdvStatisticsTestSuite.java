@@ -84,10 +84,10 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue = 0;
         double result = 0;
         testValue = calculateAdvStatistics.averageCommentsPerPosts;
-        if (calculateAdvStatistics.getUserPosts()!=0)
-            result = calculateAdvStatistics.getUserComments()/calculateAdvStatistics.getUserPosts();
+        result = calculateAdvStatistics.getUserComments()/calculateAdvStatistics.getUserPosts();
         //Then
         Assert.assertEquals(testValue, result, 0.001);
+
     }
     @Test
     public void testCommentsIsMoreThenPosts() {
