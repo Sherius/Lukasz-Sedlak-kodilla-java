@@ -8,36 +8,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PeapleQuantityTestSuite {
-    public static List<Country> listOfCountrys(){
-        List<Country> countries = new ArrayList<>();
-        while (countries.size()<5){
-            countries.add(new Country(1500000));
+class WorldTestSuite{
+    public static class PeapleQuantityTestSuite {
+        public static List<Country> listOfCountrys() {
+            List<Country> countries = new ArrayList<>();
+            while (countries.size() < 5) {
+                countries.add(new Country(1500000));
+            }
+            return countries;
         }
-        return countries;
-    }
-    public static List<Continent> listOfContinents() {
-        List<Continent> continents = new ArrayList<>();
-        while (continents.size()<5) {
-            continents.add(new Continent());
-        }
-        for (Continent continent : continents) {
-            continent.addCountries(listOfCountrys());
-        }
-        return continents;
-    }
 
-
+        public static List<Continent> listOfContinents() {
+            List<Continent> continents = new ArrayList<>();
+            while (continents.size() < 5) {
+                continents.add(new Continent());
+            }
+            for (Continent continent : continents) {
+                continent.addCountries(listOfCountrys());
+            }
+            return continents;
+        }
         @Test
         public void testGetPeapleQuantity() {
+        //Given
         World world = new World();
         world.addContinents(listOfContinents());
-        BigDecimal peapleQuantity = world.getContinents().stream()
-                .flatMap(land->land.getCountries().stream())
-                .map(land -> land.getPeopleQuantity())
-                .reduce(BigDecimal.ZERO, (sum, value)-> sum = sum.add(value));
-        int peapleTotalQuantity = 37500000;
-        BigDecimal totalBigDecimal = new BigDecimal(peapleTotalQuantity);
-        Assert.assertEquals(totalBigDecimal, peapleQuantity);
+        //When
+        BigDecimal peapleTotalQuantity = new BigDecimal(37500000);
+        BigDecimal peapleQuantity = world.getPeapleQuantity();
+        //Then
+        Assert.assertEquals(peapleTotalQuantity, peapleQuantity);
     }
+}
 }
