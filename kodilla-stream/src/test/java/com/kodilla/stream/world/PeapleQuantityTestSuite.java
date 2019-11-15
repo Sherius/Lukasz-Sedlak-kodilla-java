@@ -1,5 +1,8 @@
 package com.kodilla.stream.world;
 
+import com.kodilla.stream.world.Continent;
+import com.kodilla.stream.world.Country;
+import com.kodilla.stream.world.World;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,8 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class WorldTestSuite{
-    public static class PeapleQuantityTestSuite {
+ public class PeapleQuantityTestSuite {
         public static List<Country> listOfCountrys() {
             List<Country> countries = new ArrayList<>();
             while (countries.size() < 5) {
@@ -40,4 +42,4 @@ class WorldTestSuite{
         Assert.assertEquals(peapleTotalQuantity, peapleQuantity);
     }
 }
-}
+
