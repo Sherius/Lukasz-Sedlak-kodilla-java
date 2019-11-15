@@ -1,5 +1,6 @@
 package com.kodilla.stream.portfolio;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,5 +33,12 @@ public final class TaskList {
                 "tasks=" + tasks +
                 ", name='" + name + '\'' +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TaskList)) return false;
+        TaskList taskList = (TaskList) o;
+        return name.equals(taskList.name);
     }
 }

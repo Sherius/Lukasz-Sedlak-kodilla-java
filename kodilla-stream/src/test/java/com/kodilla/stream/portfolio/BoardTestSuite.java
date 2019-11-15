@@ -100,7 +100,7 @@ public class BoardTestSuite {
             Assert.assertEquals(user, tasks.get(1).getAssignedUser());
 
         }
-    /*@Test
+    @Test
     public void testAddTaskListFindOutdatedTasks() {
         //Given
         Board project = prepareTestData();
@@ -118,8 +118,8 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
-    }*/
-    /*@Test
+    }
+    @Test
     public void testAddTaskListFindLongTasks() {
         //Given
         Board project = prepareTestData();
@@ -136,14 +136,14 @@ public class BoardTestSuite {
 
         //Then
         Assert.assertEquals(2, longTasks);
-    }*/
+    }
     @Test
     public void testAddTaskListAverageWorkingOnTask() {
         //Given
         Board project = prepareTestData();
         //When
         List<TaskList> inProgressTask = new ArrayList<>();
-        inProgressTask.add(new TaskList("In Progress"));
+        inProgressTask.add(new TaskList("In progress"));
         List<Integer> tasks = project.getTaskLists().stream()
                 .filter(inProgressTask::contains)
                 .flatMap(tl -> tl.getTasks().stream())
@@ -155,7 +155,7 @@ public class BoardTestSuite {
                 .map(t -> tasks.get(t))
                 .average();
         //Then
-        Assert.assertEquals(10, averageDouble);
+        Assert.assertEquals(10, averageDouble.getAsDouble(),0.01);
 
     }
 }

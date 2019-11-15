@@ -13,17 +13,11 @@ public class ArrayOperationsTestSuite {
     @Test
     public void testArrayOperations(){
         //Given
-        Random random = new Random();
-        int randomNum = random.nextInt(100);
-        int[] numbers = new int[20];
-        double randomDouble = 0;
-        for (int i=0; i<numbers.length; i++){
-            numbers[i] = i+randomNum;
-            randomDouble += numbers[i];
-        }
+        int values[] = {10,20,39,40,20,25,32,32,54,68,84,98,13,14,15,16,17,18,19,20};
+        double acceptedAvg = 32.7;
         //When
-        randomDouble = randomDouble/numbers.length;
+        double result = ArrayOperations.getAverage(values);
         //Then
-        Assert.assertEquals(randomDouble, ArrayOperations.getAverage(numbers), 0.01);
+        Assert.assertEquals(acceptedAvg, result, 0.01);
     }
 }
