@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class ForumUserTestSuite {
     @Test
-    public void testGetLocationsOfFriends(){
+    public void testGetLocationsOfFriends() {
         //Given
         ForumUser user1 = new ForumUser("alan01", "Alan Kosovsky", "Washington");
         ForumUser user2 = new ForumUser("ethanreard", "Ethan Reard", "Miami");
@@ -47,6 +47,7 @@ public class ForumUserTestSuite {
         Assert.assertTrue(user1.getLocationsOfFriends().contains("Miami"));
         Assert.assertFalse(user1.getLocationsOfFriends().contains("Orlando"));
     }
+
     @Test
     public void testGetLocationsOfFriendsOfFriends() {
         //Given

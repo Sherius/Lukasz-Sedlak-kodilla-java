@@ -14,8 +14,9 @@ public class DrawerTestSuite {
         //Then
         Assert.assertEquals("This is a circle", result);
     }
+
     @Test
-    public void testDoDrawningWithTriangle () {
+    public void testDoDrawningWithTriangle() {
         //Given
         Tringle tringle = new Tringle();
         //When

@@ -16,6 +16,7 @@ public final class User {
     public String getRealName() {
         return realName;
     }
+
     @Override
     public String toString() {
         return "User{" +

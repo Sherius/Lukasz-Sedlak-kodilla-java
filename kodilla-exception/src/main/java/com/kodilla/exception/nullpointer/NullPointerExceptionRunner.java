@@ -7,7 +7,7 @@ public class NullPointerExceptionRunner {
 
         try {
             messageSender.sendMessageTo(user, "Hello");
-        } catch (MessageNotSentException e){
+        } catch (MessageNotSentException e) {
             System.out.println("Message is not send," + "but my program still running very well!");
         } finally {
             System.out.println("Processing other logic!");

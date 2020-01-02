@@ -27,6 +27,7 @@ public final class TaskList {
     public String getName() {
         return name;
     }
+
     @Override
     public String toString() {
         return "TaskList{" +
@@ -34,6 +35,7 @@ public final class TaskList {
                 ", name='" + name + '\'' +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

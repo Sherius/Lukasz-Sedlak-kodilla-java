@@ -9,8 +9,9 @@ public class Continent {
     public List<Country> getCountries() {
         return countries;
     }
+
     public void addCountries(List<Country> newCountrie) {
-        for (Country country : newCountrie){
+        for (Country country : newCountrie) {
             countries.add(country);
         }
     }

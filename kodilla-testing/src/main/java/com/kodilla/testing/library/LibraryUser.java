@@ -26,6 +26,7 @@ public class LibraryUser {
     public String getPeselId() {
         return peselId;
     }
+
     public List<Book> getBooks() {
         return books;
     }

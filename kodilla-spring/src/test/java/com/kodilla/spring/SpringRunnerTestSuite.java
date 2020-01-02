@@ -18,17 +18,18 @@ import java.sql.SQLOutput;
 @SpringBootTest
 public class SpringRunnerTestSuite {
     @Test
-    public void testCircleLoadedIntoContainer () {
+    public void testCircleLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("circle");
+        Shape shape = (Shape) context.getBean("circle");
         //When
         String name = shape.getShapeName();
         //Then
         Assert.assertEquals("This is a circle", name);
     }
+
     @Test
-    public void testTriangleLoadedIntoContainer () {
+    public void testTriangleLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Shape shape = (Shape) context.getBean("triangle");
@@ -37,21 +38,23 @@ public class SpringRunnerTestSuite {
         //Then
         Assert.assertEquals("This is a triangle", name);
     }
+
     @Test
     public void testSquareLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("createSquare");
+        Shape shape = (Shape) context.getBean("createSquare");
         //When
         String name = shape.getShapeName();
         //Then
         Assert.assertEquals("This is a square.", name);
     }
+
     @Test
     public void testShapeLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("chooseShape");
+        Shape shape = (Shape) context.getBean("chooseShape");
         //When
         String name = shape.getShapeName();
         //Then

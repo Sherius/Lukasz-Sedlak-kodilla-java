@@ -22,7 +22,8 @@ public final class BookDirectory {
         theBookList.add(new Book("Giancarlo Guerrero", "Enemies of eternity",
                 2009, "0007"));
     }
-    public List<Book> getList(){
+
+    public List<Book> getList() {
         return new ArrayList<>(theBookList);
     }
 }

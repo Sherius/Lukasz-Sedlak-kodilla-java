@@ -1,8 +1,6 @@
 package com.kodilla.testing.forum.statistics;
 
 
-
-
 class CalculateAdvStatistics {
     private Statistics statistics;
     private int userCount = 0;
@@ -12,13 +10,13 @@ class CalculateAdvStatistics {
     double averageCommentsPerUser = 0;
     double averageCommentsPerPosts = 0;
 
-    public CalculateAdvStatistics(Statistics statistics){
+    public CalculateAdvStatistics(Statistics statistics) {
         this.statistics = statistics;
-        if (statistics.usersNames().size()!=0) {
+        if (statistics.usersNames().size() != 0) {
             this.averagePostPerUser = averagePostPerUser();
             this.averageCommentsPerUser = averageCommentsPerUser();
         }
-        if (statistics.postsCount()!=0) {
+        if (statistics.postsCount() != 0) {
             this.averageCommentsPerPosts = averageCommentsPerPosts();
         }
         this.userCount = userCount();
@@ -26,35 +24,35 @@ class CalculateAdvStatistics {
         this.userComments = (int) userComments();
     }
 
-    public void showStatistics(){
+    public void showStatistics() {
         System.out.println("Average posts for user: " + getAveragePostPerUser());
         System.out.println("Average comments for user: " + getAverageCommentsPerUser());
-        System.out.println("Average comments for post: "+getAverageCommentsPerPosts());
+        System.out.println("Average comments for post: " + getAverageCommentsPerPosts());
     }
 
 
-
-
-    public double averageCommentsPerPosts( ) {
-        return statistics.commentsCount()/statistics.postsCount();
+    public double averageCommentsPerPosts() {
+        return statistics.commentsCount() / statistics.postsCount();
     }
 
-    public double averageCommentsPerUser( ) {
+    public double averageCommentsPerUser() {
         return statistics.commentsCount() / statistics.usersNames().size();
     }
-    public double averagePostPerUser( ){
+
+    public double averagePostPerUser() {
         return statistics.postsCount() / statistics.usersNames().size();
 
     }
-    private double userComments( ) {
+
+    private double userComments() {
         return statistics.commentsCount();
     }
 
-    private int userPosts( ) {
+    private int userPosts() {
         return statistics.postsCount();
     }
 
-    private int userCount( ) {
+    private int userCount() {
         return statistics.usersNames().size();
     }
 
@@ -63,17 +61,14 @@ class CalculateAdvStatistics {
     }
 
 
-
     public int getUserPosts() {
         return userPosts;
     }
 
 
-
     public int getUserComments() {
         return userComments;
     }
-
 
 
     public double getAveragePostPerUser() {
@@ -83,7 +78,6 @@ class CalculateAdvStatistics {
     public double getAverageCommentsPerUser() {
         return averageCommentsPerUser;
     }
-
 
 
     public double getAverageCommentsPerPosts() {

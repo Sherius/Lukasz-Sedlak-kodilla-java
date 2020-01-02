@@ -11,9 +11,9 @@ import java.util.Random;
 public class ArrayOperationsTestSuite {
 
     @Test
-    public void testArrayOperations(){
+    public void testArrayOperations() {
         //Given
-        int values[] = {10,20,39,40,20,25,32,32,54,68,84,98,13,14,15,16,17,18,19,20};
+        int values[] = {10, 20, 39, 40, 20, 25, 32, 32, 54, 68, 84, 98, 13, 14, 15, 16, 17, 18, 19, 20};
         double acceptedAvg = 32.7;
         //When
         double result = ArrayOperations.getAverage(values);

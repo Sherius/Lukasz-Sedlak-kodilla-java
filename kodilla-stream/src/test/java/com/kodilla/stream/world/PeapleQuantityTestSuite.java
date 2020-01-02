@@ -11,27 +11,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 
- public class PeapleQuantityTestSuite {
-        public static List<Country> listOfCountrys() {
-            List<Country> countries = new ArrayList<>();
-            while (countries.size() < 5) {
-                countries.add(new Country(1500000));
-            }
-            return countries;
+public class PeapleQuantityTestSuite {
+    public static List<Country> listOfCountrys() {
+        List<Country> countries = new ArrayList<>();
+        while (countries.size() < 5) {
+            countries.add(new Country(1500000));
         }
+        return countries;
+    }
 
-        public static List<Continent> listOfContinents() {
-            List<Continent> continents = new ArrayList<>();
-            while (continents.size() < 5) {
-                continents.add(new Continent());
-            }
-            for (Continent continent : continents) {
-                continent.addCountries(listOfCountrys());
-            }
-            return continents;
+    public static List<Continent> listOfContinents() {
+        List<Continent> continents = new ArrayList<>();
+        while (continents.size() < 5) {
+            continents.add(new Continent());
         }
-        @Test
-        public void testGetPeapleQuantity() {
+        for (Continent continent : continents) {
+            continent.addCountries(listOfCountrys());
+        }
+        return continents;
+    }
+
+    @Test
+    public void testGetPeapleQuantity() {
         //Given
         World world = new World();
         world.addContinents(listOfContinents());

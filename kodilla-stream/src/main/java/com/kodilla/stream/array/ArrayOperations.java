@@ -3,17 +3,17 @@ package com.kodilla.stream.array;
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
-public  interface ArrayOperations {
+public interface ArrayOperations {
     static double getAverage(int[] numbers) {
         IntStream.range(0, numbers.length)
-                .map(n ->numbers[n])
+                .map(n -> numbers[n])
                 .forEach(System.out::println);
 
-        OptionalDouble averageDouble = IntStream.range(0,numbers.length)
+        OptionalDouble averageDouble = IntStream.range(0, numbers.length)
                 .map(n -> numbers[n])
                 .average();
 
-            return averageDouble.orElse(0);
+        return averageDouble.orElse(0);
     }
 
 }

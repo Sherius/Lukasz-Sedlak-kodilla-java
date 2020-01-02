@@ -2,7 +2,9 @@ package com.kodilla.testing.forum.statistics;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
 import org.junit.*;
+
 import java.util.*;
 
 import org.junit.AfterClass;
@@ -12,14 +14,17 @@ import org.junit.Test;
 
 public class CalculateAdvStatisticsTestSuite {
     private static int testCounter = 0;
+
     @BeforeClass
     public static void beforeAllTests() {
         System.out.println("This is the beginning of tests.");
     }
+
     @AfterClass
     public static void afterAllTests() {
         System.out.println("All tests are finished.");
     }
+
     @Before
     public void beforeEveryTest() {
         testCounter++;
@@ -43,6 +48,7 @@ public class CalculateAdvStatisticsTestSuite {
         Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, result, 0.01);
 
     }
+
     @Test
     public void testPostCountThousand() {
         //Given
@@ -51,17 +57,18 @@ public class CalculateAdvStatisticsTestSuite {
         CalculateAdvStatistics calculateAdvStatistics = new CalculateAdvStatistics(statistics);
         calculateAdvStatistics.showStatistics();
         //When
-        double testValue=0;
-        double result=0;
+        double testValue = 0;
+        double result = 0;
         testValue = calculateAdvStatistics.averagePostPerUser;
-            result = calculateAdvStatistics.getAveragePostPerUser();
+        result = calculateAdvStatistics.getAveragePostPerUser();
         //Then
         Assert.assertEquals(testValue, result, 0.001);
         Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
         Assert.assertEquals(calculateAdvStatistics.averageCommentsPerPosts, result, 0.01);
     }
+
     @Test
-    public void  testCommentsCountZero() {
+    public void testCommentsCountZero() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.commentsCount()).thenReturn(0);
@@ -78,6 +85,7 @@ public class CalculateAdvStatisticsTestSuite {
         Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
 
     }
+
     @Test
     public void testCommentsIsLessThenPosts() {
         //Given
@@ -97,6 +105,7 @@ public class CalculateAdvStatisticsTestSuite {
         Assert.assertEquals(calculateAdvStatistics.averageCommentsPerUser, result, 0.01);
 
     }
+
     @Test
     public void testCommentsIsMoreThenPosts() {
         //Given
@@ -115,6 +124,7 @@ public class CalculateAdvStatisticsTestSuite {
         Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, 0, 0.01);
 
     }
+
     @Test
     public void testUsersIsZero() {
         //Given
@@ -125,14 +135,15 @@ public class CalculateAdvStatisticsTestSuite {
         double testValue = calculateAdvStatistics.averageCommentsPerUser;
         //Then
         Assert.assertEquals(testValue, 0, 0.001);
-        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, 0,0.01);
+        Assert.assertEquals(calculateAdvStatistics.averagePostPerUser, 0, 0.01);
         Assert.assertEquals(calculateAdvStatistics.averageCommentsPerPosts, 0, 0);
     }
+
     @Test
     public void testUserIsHoundred() {
         //Given
         List<String> userList = new ArrayList<>();
-        while (userList.size()!=100) {
+        while (userList.size() != 100) {
             userList.add("Names");
         }
         Statistics statistics = mock(Statistics.class);

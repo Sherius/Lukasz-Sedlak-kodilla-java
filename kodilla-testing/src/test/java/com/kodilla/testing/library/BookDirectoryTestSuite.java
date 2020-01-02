@@ -44,6 +44,7 @@ public class BookDirectoryTestSuite {
         }
         return resultList;
     }
+
     @Test
     public void testListBooksWithConditionMoreThan20() {
         //Given
@@ -68,6 +69,7 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks40.size());
 
     }
+
     @Test
     public void testListBooksWithConditionFragmentShorterThan3() {
         //Given
@@ -83,24 +85,25 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theLlistOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
+
     @Test
     public void testListOfBooksInHandsEqual0() {
         //Given
-       LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
-       LibraryUser libraryUser = new LibraryUser("Jan", "Kowalski", "one");
-       BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-       List<Book> books = new ArrayList<>();
-       when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(books);
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryUser libraryUser = new LibraryUser("Jan", "Kowalski", "one");
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> books = new ArrayList<>();
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(books);
         //When
         List<Book> userBooks = bookLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
-        assertEquals(0,userBooks.size());
+        assertEquals(0, userBooks.size());
 
     }
 
     @Test
-    public void testListOfBooksInHandsEqual1(){
+    public void testListOfBooksInHandsEqual1() {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         LibraryUser libraryUser = new LibraryUser("Jan", "Kowalski", "one");
@@ -113,6 +116,7 @@ public class BookDirectoryTestSuite {
         //Then
         assertEquals(1, userBooks.size());
     }
+
     @Test
     public void testListOfBooksInHandEqual5() {
         //Given

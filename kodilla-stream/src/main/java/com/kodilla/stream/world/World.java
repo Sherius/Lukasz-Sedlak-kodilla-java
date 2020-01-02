@@ -13,7 +13,7 @@ public class World {
         }
     }
 
-    public  BigDecimal getPeapleQuantity() {
+    public BigDecimal getPeapleQuantity() {
         BigDecimal peapleCount = continents.stream()
                 .flatMap(lands -> lands.getCountries().stream())
                 .map(lands -> lands.getPeopleQuantity())

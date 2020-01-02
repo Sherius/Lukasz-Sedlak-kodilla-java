@@ -19,11 +19,13 @@ public class Calculator {
         display.displayValue(val);
         return val;
     }
+
     public double mul(double a, double b) {
         double val = a * b;
         display.displayValue(val);
         return val;
     }
+
     public double div(double a, double b) {
         double val = a / b;
         display.displayValue(val);

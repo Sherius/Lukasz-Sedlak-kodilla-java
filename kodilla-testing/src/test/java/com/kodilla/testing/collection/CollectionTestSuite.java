@@ -1,4 +1,5 @@
 package com.kodilla.testing.collection;
+
 import com.kodilla.testing.collection.*;
 import org.junit.*;
 
@@ -6,24 +7,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kodilla.testing.collection.*;
+
 public class CollectionTestSuite {
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
     }
+
     @Test
-     public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
         //given
         ArrayList<Integer> emptyList = new ArrayList<Integer>();
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         //when
-        List<Integer> result =  oddNumbersExterminator.exterminate(emptyList);
+        List<Integer> result = oddNumbersExterminator.exterminate(emptyList);
         //then
         Assert.assertEquals(0, result.size());
 
     }
+
     @Test
-    public void testOddNumbersExterminatorNormalList(){
+    public void testOddNumbersExterminatorNormalList() {
         //given
         ArrayList<Integer> list = new ArrayList<>();
         list.add(15);
@@ -42,7 +46,7 @@ public class CollectionTestSuite {
     }
 
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test case: end");
     }
 

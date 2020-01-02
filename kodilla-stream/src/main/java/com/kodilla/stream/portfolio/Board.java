@@ -26,6 +26,7 @@ public final class Board {
     public String getName() {
         return name;
     }
+
     @Override
     public String toString() {
         return "Board{" +

@@ -7,7 +7,8 @@ public class ExceptionFlightRunner {
         try {
             findFlight.FindFlight(flight);
         } catch (RouteNotFoundException e) {
-            System.out.println("Error: " + e);;
+            System.out.println("Error: " + e);
+            ;
         } finally {
             System.out.println("Error RouteNotFoundException");
         }

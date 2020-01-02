@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class BookTestSuite {
     @Test
-    public void testGetListUsingFor(){
+    public void testGetListUsingFor() {
         //Given
         BookDirectory bookDirectory = new BookDirectory();
         //When
