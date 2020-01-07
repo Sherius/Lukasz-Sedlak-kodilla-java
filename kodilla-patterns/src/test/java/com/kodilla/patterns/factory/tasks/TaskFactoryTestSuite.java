@@ -14,6 +14,7 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("Shopping", shoppingTask.getTaskName());
     }
+
     @Test
     public void testPaintingTask() {
         //Given
@@ -23,6 +24,7 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("Painting", paintingTask.getTaskName());
     }
+
     @Test
     public void testDrivingTask() {
         //Given

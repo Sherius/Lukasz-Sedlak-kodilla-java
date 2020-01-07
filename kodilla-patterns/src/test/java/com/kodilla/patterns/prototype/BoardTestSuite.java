@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class BoardTestSuite {
     @Test
-    public void testToString () {
+    public void testToString() {
         //Given
         //creating the TasksList for todos
         TaskList listToDo = new TaskList("To Do Tasks");
@@ -24,7 +24,7 @@ public class BoardTestSuite {
         TaskList listInProgress = new TaskList("In Progress Tasks");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
-                .forEach(n ->listInProgress.getTasks().add(new Task("In Progress Tasks number " + n)));
+                .forEach(n -> listInProgress.getTasks().add(new Task("In Progress Tasks number " + n)));
         //creating the board and assigning the lists
         Board board = new Board("Project number 1");
         board.getLists().add(listDone);

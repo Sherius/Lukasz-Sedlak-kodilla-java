@@ -12,9 +12,9 @@ public class LibraryTestSuite {
     public void testGetBooks() {
         //Given
         Library library = new Library("Library of books");
-        Book book1= new Book("Book1", "Author1", LocalDate.of(2001,02,01));
-        Book book2= new Book("Book2", "Author1", LocalDate.of(1999,02,01));
-        Book book3= new Book("Book3", "Author1", LocalDate.of(2000,02,01));
+        Book book1 = new Book("Book1", "Author1", LocalDate.of(2001, 02, 01));
+        Book book2 = new Book("Book2", "Author1", LocalDate.of(1999, 02, 01));
+        Book book3 = new Book("Book3", "Author1", LocalDate.of(2000, 02, 01));
 
         library.getBooks().add(book1);
         library.getBooks().add(book2);
@@ -24,7 +24,8 @@ public class LibraryTestSuite {
         try {
             cloneLibrary = library.shallowCopy();
         } catch (CloneNotSupportedException e) {
-            System.out.println(e);;
+            System.out.println(e);
+            ;
         }
         Library deepCloneLibrary = null;
         try {

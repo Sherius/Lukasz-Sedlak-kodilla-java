@@ -11,10 +11,12 @@ public class SettingsFileEngineTestSuite {
     public static void openSettingsFile() {
         SettingsFileEngine.getInstance().open("myapp.settings");
     }
+
     @AfterClass
     public static void closeSettingsFile() {
         SettingsFileEngine.getInstance().close();
     }
+
     @Test
     public void testGetFileName() {
         //Given
@@ -24,6 +26,7 @@ public class SettingsFileEngineTestSuite {
         //Then
         Assert.assertEquals("myapp.settings", fileName);
     }
+
     @Test
     public void testLoadSettings() {
         //Given
@@ -32,6 +35,7 @@ public class SettingsFileEngineTestSuite {
         //Then
         Assert.assertTrue(result);
     }
+
     @Test
     public void testSaveSettings() {
         //Given

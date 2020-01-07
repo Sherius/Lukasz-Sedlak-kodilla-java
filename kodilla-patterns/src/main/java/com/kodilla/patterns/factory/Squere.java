@@ -1,6 +1,6 @@
 package com.kodilla.patterns.factory;
 
-public final class Squere implements  Shape {
+public final class Squere implements Shape {
     final String name;
     final double width;
 

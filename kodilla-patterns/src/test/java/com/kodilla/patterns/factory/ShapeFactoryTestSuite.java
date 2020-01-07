@@ -11,8 +11,9 @@ public class ShapeFactoryTestSuite {
         //When
         Shape circle = factory.makeShape(ShapeFactory.CIRCLE);
         //Then
-        Assert.assertEquals(Math.PI * Math.pow(4.5,2.0), circle.getArea(), 0);
+        Assert.assertEquals(Math.PI * Math.pow(4.5, 2.0), circle.getArea(), 0);
     }
+
     @Test
     public void testFactorySquere() {
         //Given
@@ -22,6 +23,7 @@ public class ShapeFactoryTestSuite {
         //Then
         Assert.assertEquals(28.0, squere.getCircumference(), 0);
     }
+
     @Test
     public void testFactoryRectangle() {
         //Given

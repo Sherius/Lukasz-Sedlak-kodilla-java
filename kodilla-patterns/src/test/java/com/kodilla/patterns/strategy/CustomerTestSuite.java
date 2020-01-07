@@ -25,6 +25,7 @@ public class CustomerTestSuite {
         Assert.assertEquals("[Aggressive predictor] Buy stock of XYZ", johnShouldBuy);
         Assert.assertEquals("[Balanced predictor] Buy shared units of Fund XYZ", kodillaShouldBuy);
     }
+
     @Test
     public void testIndividualInvestingStrategy() {
         //Given

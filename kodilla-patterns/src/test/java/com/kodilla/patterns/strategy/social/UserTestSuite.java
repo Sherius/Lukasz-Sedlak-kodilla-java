@@ -25,6 +25,7 @@ public class UserTestSuite {
         Assert.assertEquals("Using Twitter Publisher", yGenerationSocial);
         Assert.assertEquals("Using Snapchat Publisher", zGenerationSocial);
     }
+
     @Test
     public void testIndividualSharingStrategy() {
         //Given

@@ -26,16 +26,18 @@ public final class Board extends Prototype {
     @Override
     public String toString() {
         String s = "Board [" + name + "]\n";
-        for(TaskList list : lists) {
+        for (TaskList list : lists) {
             s = s + list.toString() + "\n";
         }
         return s;
     }
+
     public Board shallowCopy() throws CloneNotSupportedException {
-        return (Board)super.clone();
+        return (Board) super.clone();
     }
+
     public Board deepCopy() throws CloneNotSupportedException {
-        Board cloneBoard = (Board)super.clone();
+        Board cloneBoard = (Board) super.clone();
         cloneBoard.lists = new HashSet<>();
         for (TaskList theList : lists) {
             TaskList cloneList = new TaskList(theList.getName());

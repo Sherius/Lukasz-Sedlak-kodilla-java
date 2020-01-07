@@ -10,6 +10,7 @@ public class LoggerTestSuite {
     public static void setLogger() {
         Logger.getInstance().log("Log nr 1");
     }
+
     @Test
     public void testGetLastLog() {
         //Given
@@ -17,7 +18,6 @@ public class LoggerTestSuite {
         String logName = Logger.getInstance().getLastLog();
         //Then
         Assert.assertEquals("Log nr 1", logName);
-
 
 
     }

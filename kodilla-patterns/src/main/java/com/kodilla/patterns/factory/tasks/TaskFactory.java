@@ -7,15 +7,15 @@ public final class TaskFactory {
 
 
     public final Task makeTask(final String taskClass) {
-                switch (taskClass) {
-                case DRIVING:
-                    return new DrivingTask("Deliver", "New York", "Truck");
-                case PAINTING:
-                    return new PaintingTask("Painting", "Red", "Wall");
-                    case SHOPPING:
-                        return new ShoppingTask("Shopping", "Water", 2.0);
-                    default:
-                        return null;
+        switch (taskClass) {
+            case DRIVING:
+                return new DrivingTask("Deliver", "New York", "Truck");
+            case PAINTING:
+                return new PaintingTask("Painting", "Red", "Wall");
+            case SHOPPING:
+                return new ShoppingTask("Shopping", "Water", 2.0);
+            default:
+                return null;
 
         }
     }

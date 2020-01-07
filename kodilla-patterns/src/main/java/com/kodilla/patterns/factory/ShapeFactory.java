@@ -4,6 +4,7 @@ public final class ShapeFactory {
     public static final String CIRCLE = "CIRCLE";
     public static final String SQUARE = "SQUARE";
     public static final String REACTANGLE = "RECTANGLE";
+
     public final Shape makeShape(final String shapeClass) {
         switch (shapeClass) {
             case CIRCLE:

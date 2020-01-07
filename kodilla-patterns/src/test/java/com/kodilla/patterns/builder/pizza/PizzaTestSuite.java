@@ -8,7 +8,7 @@ public class PizzaTestSuite {
     public void testPizzaNew() {
         //Given
         Pizza pizza = new Pizza.PizzaBuilder()
-            .ingredient("Onion")
+                .ingredient("Onion")
                 .bottom("Thin")
                 .sauce("Spicy")
                 .ingredient("Ham")
@@ -18,6 +18,6 @@ public class PizzaTestSuite {
         //When
         int howManyIngredients = pizza.getIngredients().size();
         //Then
-        Assert.assertEquals(3,howManyIngredients);
+        Assert.assertEquals(3, howManyIngredients);
     }
 }
