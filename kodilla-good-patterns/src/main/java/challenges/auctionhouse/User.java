@@ -13,6 +13,14 @@ public class User {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
     public String getLastName() {
         return lastName;
     }

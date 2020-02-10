@@ -13,6 +13,14 @@ public class Product {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
+
     public int getQuantity() {
         return quantity;
     }
