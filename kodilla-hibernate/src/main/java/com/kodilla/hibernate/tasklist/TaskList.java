@@ -15,6 +15,10 @@ public class TaskList {
     private String description;
     private List<Task> tasks = new ArrayList<>();
 
+    public TaskList(String listName, String description) {
+        this.listName = listName;
+        this.description = description;
+    }
     @OneToMany(
             targetEntity = Task.class,
             mappedBy = "taskList",
@@ -33,10 +37,7 @@ public class TaskList {
 
     }
 
-    public TaskList(String listName, String description) {
-        this.listName = listName;
-        this.description = description;
-    }
+
     @Id
     @GeneratedValue
     @NotNull

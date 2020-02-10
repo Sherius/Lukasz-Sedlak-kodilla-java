@@ -27,9 +27,8 @@ public class TaskListDaoTestSuite {
     public void testFindByListName() {
         //Given
         TaskList taskList = new TaskList(LISTNAMES, "dziala?");
-
-        //When
         taskListDao.save(taskList);
+        //When
         List<TaskList> taskListsName = taskListDao.findByListName(LISTNAMES);
 
         //Then
